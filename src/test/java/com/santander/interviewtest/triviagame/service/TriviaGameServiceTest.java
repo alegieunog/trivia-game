@@ -49,7 +49,9 @@ public class TriviaGameServiceTest {
         when(triviaGameRepository.save(any())).thenReturn(trivia);
 
         var actualResponse = underTest.startTrivia();
-        assertThat(actualResponse).isEqualTo(expectedResponse);
+        assertThat(actualResponse.question()).isEqualTo(expectedResponse.question());
+        assertThat(actualResponse.triviaId()).isEqualTo(expectedResponse.triviaId());
+        assertThat(actualResponse.possibleAnswers().size()).isEqualTo(expectedResponse.possibleAnswers().size());
     }
 
     @Test

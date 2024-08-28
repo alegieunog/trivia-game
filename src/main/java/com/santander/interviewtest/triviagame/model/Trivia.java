@@ -26,10 +26,10 @@ public class Trivia implements Serializable {
     private String question;
 
     @Column(name = "correct_answer", nullable = false)
-    String correctAnswer;
+    private String correctAnswer;
 
     @Column(name = "answerAttempts", nullable = false)
-    Integer answerAttempts;
+    private Integer answerAttempts;
 
     public Long getTriviaId() {
         return triviaId;
